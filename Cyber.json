@@ -1,0 +1,28 @@
+{
+  "author": "CYBER",
+  "version": "1.5.7",
+  "autoRestart": true,
+  "developermode": false,
+  "language": "en",
+  "notification": true,
+  "approval": false,
+  "BOTNAME": "𝐈𝐬𝐥𝐦𝐚𝐢𝐜𝐤 𝐂𝐡𝐚𝐭",
+  "PREFIX": "/",
+  "OPERATOR": [
+    "100006420851274",
+    ""
+  ],
+  "ADMINBOT": [
+    "100006420851274",
+    "",
+    "",
+    "100029115600589"
+  ],
+  "OWNER": ["100029115600589"], 
+  "APPROVED": [],
+  "disabledcmds": [
+  ],
+  "disabledevents": [],
+  "note": "make sure that the bot name you entered is all lowercase",
+  "notice": " dont cng auther name and owner uid. otherwise bot not working"
+}
