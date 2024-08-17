@@ -51,11 +51,11 @@ module.exports.handleReply = async ({ api, event, handleReply }) => {
 
     try {
       const audioData = (await axios.get(selectedUrl, { responseType: "arraybuffer" })).data;
-      const path = __dirname + "/cache/dipto.mp3";
+      const path = __dirname + "/cache/Cyber.mp3";
       fs.writeFileSync(path, Buffer.from(audioData, "utf-8"));
 
       api.sendMessage({
-        body: ` 🎧🖤\n sura ${selectedSurah}  note: ${title}`,
+        body: `𝗦𝗨𝗥𝗔 ${selectedSurah} 🖤🎧\n\n ${title}`,
         attachment: fs.createReadStream(path)
       }, event.threadID, () => fs.unlinkSync(path), event.messageID);
     } catch (e) {
