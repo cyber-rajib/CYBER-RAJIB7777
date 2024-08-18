@@ -5,7 +5,7 @@ module.exports.config = {
     credits: "Islamick Cyber Chat",
     prefix: true,
     description: "",
-    category: "prefix",
+    category: "admin",
     usages: "",
     cooldowns: 5,
     dependencies: 
