@@ -19,7 +19,7 @@ handleEvent: async function ({ api, event, args }) {
   const body = content.toLowerCase();
   const {alldl} = require("rahad-all-downloader")
   if (body.startsWith("https://")) {
-  api.setMessageReaction("🔍", event.messageID, (err) => {}, true);
+  api.setMessageReaction("🌿", event.messageID, (err) => {}, true);
 const data = await alldl(content);
   console.log(data)
   const {title, videoUrl} = data.data;
@@ -30,7 +30,7 @@ const data = await alldl(content);
     fs.writeFileSync(__dirname + "/cache/auto.mp4", Buffer.from(video, "utf-8"))
 
         return api.sendMessage({
-            body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\nᴛɪᴛʟᴇ ${title}⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
+            body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n\nᴛɪᴛʟᴇ ${title}\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
             attachment: fs.createReadStream(__dirname + "/cache/auto.mp4")
 
         }, event.threadID, event.messageID);
