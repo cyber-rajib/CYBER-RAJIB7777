@@ -19,23 +19,21 @@ handleEvent: async function ({ api, event, args }) {
   const body = content.toLowerCase();
   const {alldl} = require("rahad-all-downloader")
   if (body.startsWith("https://")) {
-  api.setMessageReaction("📿", event.messageID, (err) => {}, true);
+  api.setMessageReaction("🔍", event.messageID, (err) => {}, true);
 const data = await alldl(content);
   console.log(data)
-  const {videoUrl, title} = data.data;
-    api.setMessageReaction("❤️‍🩹", event.messageID, (err) => {}, true);
+  const {title, videoUrl} = data.data;
+    api.setMessageReaction("✔️", event.messageID, (err) => {}, true);
   const video = (await axios.get(videoUrl, {
       responseType: "arraybuffer",
     })).data;
     fs.writeFileSync(__dirname + "/cache/auto.mp4", Buffer.from(video, "utf-8"))
 
         return api.sendMessage({
-            body: `⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n\nᴛɪᴛʟᴇ: ${title}\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`,
+            body: `《TITLE》: ${title}`,
             attachment: fs.createReadStream(__dirname + "/cache/auto.mp4")
 
         }, event.threadID, event.messageID);
     }
-}
-                                 }    }
 }
 }
