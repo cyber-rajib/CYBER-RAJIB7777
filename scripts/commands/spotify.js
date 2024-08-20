@@ -1,62 +1,26 @@
-const axios = require('axios');
-const fs = require('fs');
-
+/**
+* @Shaon Ahmed 
+* @warn Do not edit code or edit credits
+* @Dont Change This Credits Otherwisw Your Bot Lol
+*/
 module.exports.config = {
   name: "janu",
-  version: "3.8",
-  Permission: 0,
-  credits: "islamick Cyber Chat", 
-  Prefix :true,
-  description: "sim",
-  Category: "sim simi fun",
-  usages: "janu [your query]",
-  cooldowns: 3,
+  version: "1.0.0",
+  Permssion: 0,
+  credits: "Shaon Ahmed",//partner
+  prefix: false,
+  description: "Dont Change This    Credits Otherwisw Your Bot Lol",
+  usages: "[ask]",
+  Category: "SIM ✅",
+  cooldowns: 2
 };
 
-module.exports.handleEvent = async function ({ api, event }) {
-  if (!(event.body.indexOf("janu") === 0 || event.body.indexOf("Janu") === 0)) return;
-  const args = event.body.split(/\s+/);
-  args.shift();
-  const q = args.join(" "); 
-
-  try {
-    const response = await axios.get(`https://islamick-cyber-api.onrender.com/sim?reply=${q}`)
-
-
-    const formattedResponse = formatFont(response.data.message);
-
-    api.sendMessage(formattedResponse, event.threadID, event.messageID);
-
-
-  } catch (error) {
-    console.error(error);
-    api.sendMessage('হুম জান বলো কি বলবা-!!❤️✌️', event.threadID, event.messageID);
-  }
-};
-
-module.exports.run = async function({api, event}) {
-
-};
-
-function formatFont(text) {
-  const fontMapping = {
-     'a': '𝐚', 'b': '𝐛', 'c': '𝐜', '𝐝': '🅓', 'e': '𝐞', 'f': '𝐟', 'g': '𝐠', 'h': '𝐡',
-        'i': '𝐢', 'j': '𝐣', 'k': '𝐤', 'l': '𝐥', 'm': '𝐦', 'n': '𝐧', 'o': '𝐨', 'p': '𝐩', 'q': '𝐪',
-        'r': '𝐫', 's': '𝐬', 't': '𝐭', 'u': '𝐮', 'v': '𝐯', 'w': '𝐰', 'x': '𝐱', 'y': '𝐲', 'z': '𝐳',
-        'A': '𝐀', 'B': '𝐁', 'C': '𝐂', 'D': '𝐃', 'E': '𝐄', 'F': '𝐅', 'G': '𝐆', 'H': '𝐇',
-        'I': '𝐈', 'J': '𝐉', 'K': '𝐊', 'L': '𝐋', 'M': '𝐌', 'N': '𝐍', 'O': '𝐎', 'P': '𝐏', 'Q': '𝐐',
-        'R': '𝐑', 'S': '𝐒', 'T': '𝐓', 'U': '𝐔', 'V': '𝐕', 'W': '𝐖', 'X': '𝐗', 'Y': '𝐘', 'Z': '𝐙', '0': '𝟎',
-        '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟔', '7': '𝟕', '8': '𝟖', '9': '𝟗',
-  };
-
-  let formattedText = "";
-  for (const char of text) {
-    if (char in fontMapping) {
-      formattedText += fontMapping[char];
-    } else {
-      formattedText += char;
-    }
-  }
-
-  return formattedText;
+module.exports.run = async ({ api, event,args }) => {
+const axios = require("axios");
+let query = args.join(" ");
+if (!query)
+    return api.sendMessage(`হুম জান বলো কি বলবা-!!❤️✌️`, event.threadID, event.messageID);
+const res = await axios.get(`https://islamick-cyber-api.onrender.com/sim?type=ask&ask=${query}`);
+var plaintext = res.data.answer;
+api.sendMessage(plaintext, event.threadID, event.messageID)
 }
