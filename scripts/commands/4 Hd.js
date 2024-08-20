@@ -38,9 +38,9 @@ module.exports.run = async function({ api, event, args }) {
 
     const {upscale} = require('nayan-server')
 
-          if (event.type !== "message_reply") return api.sendMessage("╭•┄┅═══❁🌺❁═══┅┄•╮\n\nআপনার ছবি টি HD তে  পরিবর্তন করা হলো\n\n╰•┄┅═══❁🌺❁═══┅┄•╯", event.threadID, event.messageID);
+          if (event.type !== "message_reply") return api.sendMessage("╭•┄┅══❁🌺❁══┅┄•╮\n\nআপনার ছবি টি HD তে  পরিবর্তন করা হলো\n\n╰•┄┅══❁🌺❁══┅┄•╯", event.threadID, event.messageID);
 
-        if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("╭•┄┅═══❁🌺❁═══┅┄•╮\n\nআপনার ছবি টি HD তে  পরিবর্তন করা হলো\n\n╰•┄┅═══❁🌺❁═══┅┄•╯", event.threadID, event.messageID);
+        if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("╭•┄┅══❁🌺❁══┅┄•╮\n\nআপনার ছবি টি HD তে  পরিবর্তন করা হলো\n\n╰•┄┅══❁🌺❁══┅┄•╯", event.threadID, event.messageID);
 
         if (event.messageReply.attachments[0].type != "photo") return api.sendMessage("এটা কোনো ছবি না", event.threadID, event.messageID);
 
@@ -82,7 +82,7 @@ const res = await upscale(content, model)
 
         {
 
-            msg += `╭•┄┅════❁🌺❁════┅┄•╮\n\nআপনার ছবি টি HD তে  পরিবর্তন করা হলো\n\n╰•┄┅════❁🌺❁════┅┄•╯`
+            msg += `╭•┄┅══❁🌺❁══┅┄•╮\n\nআপনার ছবি টি HD তে  পরিবর্তন করা হলো\n\n╰•┄┅══❁🌺❁══┅┄•╯`
 
         }
 
