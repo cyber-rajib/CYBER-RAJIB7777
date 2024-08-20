@@ -36,7 +36,7 @@ module.exports.config = {
 
 
                 api.sendMessage({ 
-          body: `𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥 𝐚dd𝐢𝐧𝐠 𝐲𝐨𝐮𝐫 𝐭𝐞𝐱𝐭..✨🌺\n𝐐𝐒𝐍 ｢💬｣ : ${ask}\n𝐀𝐍𝐒 ｢💬｣: ${ans}`
+          body: `📝Your Data Added To Database Successfully\n1️⃣ASK: ${ask}\n2️⃣ANS: ${ans}`
                         }, event.threadID);
                       } catch (error) {
                         console.error(error);
