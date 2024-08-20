@@ -1,26 +1,32 @@
-/**
-* @Shaon Ahmed 
-* @warn Do not edit code or edit credits
-* @Dont Change This Credits Otherwisw Your Bot Lol
-*/
-module.exports.config = {
-  name: "janu",
-  version: "11.9.7",
-  permssion: 0,
-  credits: "Shaon Ahmed",
-  prefix:true,
-  description: "SIM",
-  category: "Smi",
-  usages: "janu",
-  cooldowns: 30,
+module.exports = {
+  config: {
+    name: "profile",
+    version: "1.1",
+    credits: "dipto",
+    prefix:true,
+    countDown: 5,
+    Permssion: 0,
+    description: "PROFILE image",
+    category: "image",
+    usages: "{pn} @tag or userID or reply to a message or provide a Facebook URL" 
+  },
+  run: async function ({ event, message, usersData, args }) {
+    const getAvatarUrl = async (uid) => await `https://graph.facebook.com/${uid}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
+    const uid = Object.keys(event.mentions)[0] || args[0] || event.senderID;
+    let avt;
+    try {
+      if (event.type === "message_reply") {
+        avt = await getAvatarUrl(event.messageReply.senderID);
+      } else if (args.join(" ").includes("facebook.com")) {
+        const match = args.join(" ").match(/(\d+)/);
+        if (match) avt = await getAvatarUrl(match[0]);
+        else throw new Error("Invalid Facebook URL.");
+      } else {
+        avt = await getAvatarUrl(uid);
+      }
+      api.sendMessage({ body: "", attachment: (await require('axios').get(avt,{ responseType: 'stream' })).data }, event.threadID, event.messageID);
+    } catch (error) {
+      api.sendMessage(`⚠️ Error: ${error.message}`,event.threadID, event.messageID);
+    }
+  }
 };
-
-module.exports.run = async ({ api, event,args }) => {
-const axios = require("axios");
-let query = args.join(" ");
-if (!query)
-    return api.sendMessage(`হুম জান বলো কি বলবা-!!❤️✌️`, event.threadID, event.messageID);
-const res = await axios.get(`https://islamick-cyber-api.onrender.com/sim?type=ask&ask=${query}`);
-var plaintext = res.data.answer;
-api.sendMessage(plaintext, event.threadID, event.messageID)
-}
