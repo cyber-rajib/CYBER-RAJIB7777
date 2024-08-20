@@ -4,13 +4,14 @@ const fs = require("fs");
 
 module.exports.config = {
   name: "teach",
-  version: "1.0.0",
+  version: "11.9.7",
   permssion: 0,
-  credits: "Islamick Cyber Chat",
-  prefix: false,
-  description: "Teach AI",
-  Category: " SIM ",
-    cooldowns: 2,
+  credits: "Shaon Ahmed",
+  prefix:true,
+  description: "sim",
+  category: "sim add",
+  usages: "teach",
+  cooldowns: 30,
 };
 
   module.exports.run = async function({ api, event, args, Users, Threads, Currencies}) {
@@ -28,7 +29,7 @@ module.exports.config = {
       const ans = msg[1].trim();
 
 
-      const img = `https://islamick-cyber-api.onrender.com/sim?type=teach&ask=${ask}&ans=${ans}`
+      const img = `https://all-api-ius8.onrender.com/sim?type=teach&ask=${ask}&ans=${ans}`
 
       try {
         const response = await axios.get(img);
