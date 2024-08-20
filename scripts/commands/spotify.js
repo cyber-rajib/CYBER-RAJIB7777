@@ -5,14 +5,14 @@
 */
 module.exports.config = {
   name: "janu",
-  version: "1.0.0",
-  Permssion: 0,
-  credits: "Shaon Ahmed",//partner
-  prefix: false,
-  description: "Dont Change This    Credits Otherwisw Your Bot Lol",
-  usages: "[ask]",
-  Category: "SIM ✅",
-  cooldowns: 2
+  version: "11.9.7",
+  permssion: 0,
+  credits: "Shaon Ahmed",
+  prefix:true,
+  description: "SIM",
+  category: "Smi",
+  usages: "janu",
+  cooldowns: 30,
 };
 
 module.exports.run = async ({ api, event,args }) => {
