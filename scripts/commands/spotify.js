@@ -6,7 +6,7 @@ module.exports.config = {
   version: "3.8",
   Permission: 0,
   credits: "islamick Cyber Chat", 
-  Prefix :awto,
+  Prefix :true,
   description: "sim",
   Category: "sim simi fun",
   usages: "janu [your query]",
