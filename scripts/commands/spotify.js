@@ -1,6 +1,6 @@
 module.exports = {
   config: {
-    name: "profile",
+    name: "plp",
     version: "1.1",
     credits: "dipto",
     prefix:true,
