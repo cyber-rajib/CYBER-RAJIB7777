@@ -13,9 +13,9 @@ module.exports.run = async function({
     try {
       var tpk = `╭•┄┅═══❁🌺❁═══┅┄•╮\n🖼️= ｢𝐑𝐄𝐌𝐎𝐕𝐄 𝐈𝐌𝐆｣ =🖼️\n╰•┄┅═══❁🌺❁═══┅┄•╯\n✮🩷𝐁𝐀𝐂𝐊𝐆𝐑𝐎𝐔𝐍𝐃🩷✮\n
 ⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`;
-        if (event.type !== "message_reply") return api.sendMessage("[⚜️]➜ You must reply to a photo", event.threadID, event.messageID);
-        if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("[⚜️]➜ You must reply to a photo", event.threadID, event.messageID);
-        if (event.messageReply.attachments[0].type != "photo") return api.sendMessage("[⚜️]➜ This is not an image", event.threadID, event.messageID);
+        if (event.type !== "message_reply") return api.sendMessage("｢💬｣=> You reply one img", event.threadID, event.messageID);
+        if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("｢💬｣=> Reply Your img", event.threadID, event.messageID);
+        if (event.messageReply.attachments[0].type != "photo") return api.sendMessage("｢💬｣=> its not img reply a img", event.threadID, event.messageID);
 
         const content = (event.type == "message_reply") ? event.messageReply.attachments[0].url : args.join(" ");
         const KeyApi = ["qReKoWSpkMAi2vbi6RUEHctA","ho37vvCUppqTKcyfjbLXnt4t","ytr2ukWQW2YrXV8dshPbA8cE"]
@@ -47,15 +47,15 @@ module.exports.run = async function({
             });
      } catch (e) {
         console.log(e)
-        return api.sendMessage(`[⚜️]➜ Nayan Server Is Busy Now`, event.threadID, event.messageID);
+        return api.sendMessage(`｢👾｣ Api sarvar problem`, event.threadID, event.messageID);
   }
 };
 
 module.exports.config = {
-    name: "removebg",
+    name: "remove",
     version: "1.0.0",
     permission: 0,
-    credits: "Nayan",
+    credits: "Islamick Cyber Chat",
     description: "",
     prefix: true,
     category: "prefix",
