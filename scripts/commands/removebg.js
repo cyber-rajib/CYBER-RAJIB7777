@@ -28,7 +28,7 @@ module.exports.run = async function({
         formData.append('image_file', fs.createReadStream(inputPath), path.basename(inputPath));
         axios({
             method: 'post',
-            url: 'https://api.remove.bg/v1.0/removebg',
+            url: 'https://mostakim-api.onrender.com/removebg',
             data: formData,
             responseType: 'arraybuffer',
             headers: {
@@ -59,10 +59,3 @@ module.exports.config = {
     description: "",
     prefix: true,
     category: "prefix",
-    usages: "reply",
-    cooldowns: 10,
-    dependencies: {
-       'form-data': '',
-       'image-downloader': ''
-    }
-};
