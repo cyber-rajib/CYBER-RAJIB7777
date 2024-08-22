@@ -8,7 +8,7 @@ module.exports.config = {
   version: "11.9.7",
   permssion: 0,
   credits: "Shaon Ahmed",
-  prefix:true,
+  prefix:false,
   description: "SIM",
   category: "Smi",
   usages: "janu",
@@ -20,7 +20,7 @@ const axios = require("axios");
 let query = args.join(" ");
 if (!query)
     return api.sendMessage(`হুম জান বলো কি বলবা-!!❤️✌️`, event.threadID, event.messageID);
-const res = await axios.get(`https://islamick-cyber-api.onrender.com/sim?type=ask&ask=${query}`);
+const res = await axios.get(`https://all-api-ius8.onrender.com/sim?type=ask&ask=${query}`);
 var plaintext = res.data.answer;
 api.sendMessage(plaintext, event.threadID, event.messageID)
 }
