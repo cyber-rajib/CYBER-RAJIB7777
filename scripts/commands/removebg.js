@@ -21,7 +21,7 @@ module.exports = {
             !events.messageReply.attachments || 
             events.messageReply.attachments.length === 0 || 
             events.messageReply.attachments[0].type !== "photo") {
-            return nayan.reply("｢🌩️｣=> You reply one img", events.threadID, events.messageID);
+            return cyber.reply("｢🌩️｣=> You reply one img", events.threadID, events.messageID);
         }
 
         const imageUrl = events.messageReply.attachments[0].url;
@@ -61,7 +61,7 @@ module.exports = {
 
         } catch (error) {
             console.error("Error processing the image:", error);
-            return nayan.reply("｢👾｣ There was an error processing the image", events.threadID, events.messageID);
+            return cyber.reply("｢👾｣ There was an error processing the image", events.threadID, events.messageID);
         }
     }
 }
