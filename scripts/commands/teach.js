@@ -22,9 +22,9 @@ module.exports.config = {
   var nam = await Users.getNameUser(id);
   var ThreadInfo = await api.getThreadInfo(event.threadID);
     if (!info) {
-      return api.sendMessage(`Please enter in the format:\n${global.config.PREFIX}teach hi - hello`, event.threadID);
+      return api.sendMessage(`Please enter in the format:\n${global.config.PREFIX}teach hi + hello`, event.threadID);
     } else {
-      const msg = info.split("-");
+      const msg = info.split("+");
       const ask = msg[0].trim();
       const ans = msg[1].trim();
 
