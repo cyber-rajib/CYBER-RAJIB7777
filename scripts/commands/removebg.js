@@ -11,7 +11,7 @@ module.exports = {
         cooldowns: 10,
     },
 
-    start: async function({ cyber, events, args, CYBER }) {
+    start: async function({ nayan, events, args, NAYAN}) {
         const axios = require("axios");
         const fs = require("fs-extra");
         const path = require("path");
@@ -21,7 +21,7 @@ module.exports = {
             !events.messageReply.attachments || 
             events.messageReply.attachments.length === 0 || 
             events.messageReply.attachments[0].type !== "photo") {
-            return cyber.reply("｢🌩️｣=> You reply one img", events.threadID, events.messageID);
+            return nayan.reply("｢🌩️｣=> You reply one img", events.threadID, events.messageID);
         }
 
         const imageUrl = events.messageReply.attachments[0].url;
@@ -49,8 +49,8 @@ module.exports = {
 
             // Send the image back
             const allimage = [fs.createReadStream(imagePath)];
-            CYBER.react("💭");
-            await cyber.reply({
+            NAYAN.react("💭");
+            await nayan.reply({
                 body: "╭•┄┅═══❁🌺❁═══┅┄•╮\n🖼️= ｢𝐑𝐄𝐌𝐎𝐕𝐄 𝐈𝐌𝐆｣ =🖼️\n╰•┄┅═══❁🌺❁═══┅┄•╯\n✮🩷𝐁𝐀𝐂𝐊𝐆𝐑𝐎𝐔𝐍𝐃🩷✮\n
 ⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆",
                 attachment: allimage
@@ -61,7 +61,7 @@ module.exports = {
 
         } catch (error) {
             console.error("Error processing the image:", error);
-            return cyber.reply("｢👾｣ There was an error processing the image", events.threadID, events.messageID);
+            return nayan.reply("｢👾｣ There was an error processing the image", events.threadID, events.messageID);
         }
     }
 }
