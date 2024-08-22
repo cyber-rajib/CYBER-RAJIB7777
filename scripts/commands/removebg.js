@@ -1,9 +1,9 @@
 module.exports = {
     config: {
-        name: "remove",
+        name: "removebg",
         version: "1.0.0",
         permission: 0,
-        credits: "Islamick Cyber Chat",
+        credits: "Nayan",
         description: "Background Remove",
         prefix: true,
         category: "prefix",
@@ -11,7 +11,7 @@ module.exports = {
         cooldowns: 10,
     },
 
-    start: async function({ nayan, events, args, NAYAN}) {
+    start: async function({ nayan, events, args, NAYAN }) {
         const axios = require("axios");
         const fs = require("fs-extra");
         const path = require("path");
@@ -21,7 +21,7 @@ module.exports = {
             !events.messageReply.attachments || 
             events.messageReply.attachments.length === 0 || 
             events.messageReply.attachments[0].type !== "photo") {
-            return nayan.reply("｢🌩️｣=> You reply one img", events.threadID, events.messageID);
+            return nayan.reply("[❌] Please reply to a photo", events.threadID, events.messageID);
         }
 
         const imageUrl = events.messageReply.attachments[0].url;
@@ -49,10 +49,9 @@ module.exports = {
 
             // Send the image back
             const allimage = [fs.createReadStream(imagePath)];
-            NAYAN.react("💭");
+            NAYAN.react("✅");
             await nayan.reply({
-                body: "╭•┄┅═══❁🌺❁═══┅┄•╮\n🖼️= ｢𝐑𝐄𝐌𝐎𝐕𝐄 𝐈𝐌𝐆｣ =🖼️\n╰•┄┅═══❁🌺❁═══┅┄•╯\n✮🩷𝐁𝐀𝐂𝐊𝐆𝐑𝐎𝐔𝐍𝐃🩷✮\n
-⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆",
+                body: "🖼️=== [ REMOVED BACKGROUND ] ===🖼️",
                 attachment: allimage
             }, events.threadID, events.messageID);
 
@@ -61,7 +60,7 @@ module.exports = {
 
         } catch (error) {
             console.error("Error processing the image:", error);
-            return nayan.reply("｢👾｣ There was an error processing the image", events.threadID, events.messageID);
+            return nayan.reply("[❌] There was an error processing the image", events.threadID, events.messageID);
         }
     }
 }
