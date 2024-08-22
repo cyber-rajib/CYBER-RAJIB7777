@@ -1,61 +1,67 @@
+module.exports = {
+    config: {
+        name: "remove",
+        version: "1.0.0",
+        permission: 0,
+        credits: "Islamick Cyber Chat",
+        description: "Background Remove",
+        prefix: true,
+        category: "prefix",
+        usages: "reply",
+        cooldowns: 10,
+    },
 
+    start: async function({ cyber, events, args, CYBER }) {
+        const axios = require("axios");
+        const fs = require("fs-extra");
+        const path = require("path");
 
-const axios = require('axios');
-const FormData = require('form-data');
-const fs = require('fs-extra');
-const path = require('path');
-const {image} = require('image-downloader');
+        // Check if the event is a reply and contains an image
+        if (events.type !== "message_reply" || 
+            !events.messageReply.attachments || 
+            events.messageReply.attachments.length === 0 || 
+            events.messageReply.attachments[0].type !== "photo") {
+            return nayan.reply("｢🌩️｣=> You reply one img", events.threadID, events.messageID);
+        }
 
+        const imageUrl = events.messageReply.attachments[0].url;
+        const apiEndpoint = `https://mostakim-api.onrender.com/removebg?input=${encodeURIComponent(imageUrl)}`;
 
-module.exports.run = async function({
-    api, event, args
-}){
-    try {
-      var tpk = `╭•┄┅═══❁🌺❁═══┅┄•╮\n🖼️= ｢𝐑𝐄𝐌𝐎𝐕𝐄 𝐈𝐌𝐆｣ =🖼️\n╰•┄┅═══❁🌺❁═══┅┄•╯\n✮🩷𝐁𝐀𝐂𝐊𝐆𝐑𝐎𝐔𝐍𝐃🩷✮\n
-⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`;
-        if (event.type !== "message_reply") return api.sendMessage("｢💬｣=> You reply one img", event.threadID, event.messageID);
-        if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("｢💬｣=> Reply Your img", event.threadID, event.messageID);
-        if (event.messageReply.attachments[0].type != "photo") return api.sendMessage("｢💬｣=> its not img reply a img", event.threadID, event.messageID);
+        try {
+            // Call the API to remove the background
+            const response = await axios.get(apiEndpoint, { responseType: 'arraybuffer' });
+            
+            if (response.status !== 200) {
+                throw new Error(`API responded with status code ${response.status}`);
+            }
 
-        const content = (event.type == "message_reply") ? event.messageReply.attachments[0].url : args.join(" ");
-        const KeyApi = ["qReKoWSpkMAi2vbi6RUEHctA","ho37vvCUppqTKcyfjbLXnt4t","ytr2ukWQW2YrXV8dshPbA8cE"]
-        const inputPath = path.resolve(__dirname, 'cache', `photo.png`);
-         await image({
-        url: content, dest: inputPath
-    });
-        const formData = new FormData();
-        formData.append('size', 'auto');
-        formData.append('image_file', fs.createReadStream(inputPath), path.basename(inputPath));
-        axios({
-            method: 'post',
-            url: 'https://mostakim-api.onrender.com/removebg',
-            data: formData,
-            responseType: 'arraybuffer',
-            headers: {
-                ...formData.getHeaders(),
-                'X-Api-Key': KeyApi[Math.floor(Math.random() * KeyApi.length)],
-            },
-            encoding: null
-        })
-            .then((response) => {
-                if (response.status != 200) return console.error('Error:', response.status, response.statusText);
-                fs.writeFileSync(inputPath, response.data);
-                return api.sendMessage({body:tpk, attachment: fs.createReadStream(inputPath)},event.threadID, () => fs.unlinkSync(inputPath));
-            })
-            .catch((error) => {
-                return console.error('Request failed:', error);
-            });
-     } catch (e) {
-        console.log(e)
-        return api.sendMessage(`｢👾｣ Api sarvar problem`, event.threadID, event.messageID);
-  }
-};
+            const imageBuffer = Buffer.from(response.data);
 
-module.exports.config = {
-    name: "remove",
-    version: "1.0.0",
-    permission: 0,
-    credits: "Islamick Cyber Chat",
-    description: "",
-    prefix: true,
-    category: "prefix",
+            // Ensure the cache directory exists
+            const cachePath = path.join(__dirname, "cache");
+            if (!fs.existsSync(cachePath)) {
+                fs.mkdirSync(cachePath);
+            }
+
+            // Write the image file to disk
+            const imagePath = path.join(cachePath, "removebg.jpg");
+            fs.writeFileSync(imagePath, imageBuffer);
+
+            // Send the image back
+            const allimage = [fs.createReadStream(imagePath)];
+            CYBER.react("💭");
+            await cyber.reply({
+                body: "╭•┄┅═══❁🌺❁═══┅┄•╮\n🖼️= ｢𝐑𝐄𝐌𝐎𝐕𝐄 𝐈𝐌𝐆｣ =🖼️\n╰•┄┅═══❁🌺❁═══┅┄•╯\n✮🩷𝐁𝐀𝐂𝐊𝐆𝐑𝐎𝐔𝐍𝐃🩷✮\n
+⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆",
+                attachment: allimage
+            }, events.threadID, events.messageID);
+
+            // Optionally clean up the cache directory
+            fs.unlinkSync(imagePath);
+
+        } catch (error) {
+            console.error("Error processing the image:", error);
+            return nayan.reply("｢👾｣ There was an error processing the image", events.threadID, events.messageID);
+        }
+    }
+}
