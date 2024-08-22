@@ -6,7 +6,7 @@ module.exports.config = {
   name: "teach",
   version: "11.9.7",
   permssion: 0,
-  credits: "Shaon Ahmed",
+  credits: "Islamick Cyber Chat",
   prefix:true,
   description: "sim",
   category: "sim add",
@@ -36,7 +36,7 @@ module.exports.config = {
 
 
                 api.sendMessage({ 
-          body: `📝Your Data Added To Database Successfully\n1️⃣ASK: ${ask}\n2️⃣ANS: ${ans}`
+          body: `𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐀dd 𝐘𝐨𝐮𝐫 𝐓𝐞𝐚𝐜𝐡✨🌺\n 𝐀𝐒𝐊 ｢💬｣: ${ask}\n𝐀𝐍𝐒｢💬｣: ${ans}`
                         }, event.threadID);
                       } catch (error) {
                         console.error(error);
