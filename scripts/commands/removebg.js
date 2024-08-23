@@ -52,10 +52,17 @@ module.exports.run = async function({
 };
 
 module.exports.config = {
-    name: "remove",
+    name: "removebg",
     version: "1.0.0",
     permission: 0,
     credits: "Islamick Cyber Chat",
     description: "",
     prefix: true,
     category: "prefix",
+    usages: "reply",
+    cooldowns: 10,
+    dependencies: {
+       'form-data': '',
+       'image-downloader': ''
+    }
+};
