@@ -1,5 +1,5 @@
 module.exports.config = {
-  name: "upt",
+  name: "monitor",
   version: "1.0.0",
   Permssion: 0,
   credits: "Islamick Cyber Chat",
