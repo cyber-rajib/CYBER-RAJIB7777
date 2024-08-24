@@ -5,9 +5,9 @@ const { createCanvas, loadImage } = require("canvas");
 module.exports.config = {
   name: "spamban",
   version: "1.1.0",
-  Permssion: 0,
-  credits: "August Quinn",
-  prefix :true,
+  permssion: 0,
+  credits: "Islamick Cyber Chat",
+  prefix:true,
   description: "Automatically warns users when certain sensitive keywords are detected in the message.",
   category: "System",
   cooldowns: 1
@@ -28,7 +28,7 @@ module.exports.handleEvent = async ({ event, api }) => {
     }
   }
 
-  const sensitiveKeywords = ["i will kill you", "i will stab you", "kill you", "stab you", "fuck you", "you idiot", "motherfucker"]; // Dagdagan mo lang kung gusto mong maraming keywords 
+  const sensitiveKeywords = ["i will kill you", "i will stab you", "kill you", "stab you", " বাঞ্চুদ","bancud","madarcud","মাদারচোদ","make cudi","মাকে চুদি","bl", "Bl","Bal","bal","Mc","mc","bc", "BC","বাল","sawya","সাওয়া","হাউয়া","সাউয়া","hauya","tor mare cudi", "Tor mare cudi","tor mare xudi", "Tor mare xudi", "তোর মারে চুদি", "আয় চুদি","ay cudi","ay xudi", "nodi", "magi","Magi", " bessa", "Bessa", "মাগি","নডি","xudi", "cudi", "cuda", "xuda","putki mara","পুটকি মারা","সোনা","suna", "vuda","vudi","tor mar vuda", "ভুদা","sex","hot","sexy","BC","bc","xudmarani","cudmarani", "vuda lal","madarxud", "magi baz", "bazar er khanki","bassa magi", "noti msgi", "kuttar bacha", " suorerbacca","potitamagi","potita","potitaloy","khankirpula","heda","হেডা","খামকির পুলা", "fuck you", "you idiot", "motherfucker"]; // Dagdagan mo lang kung gusto mong maraming keywords 
   const warningText = "WARNING!";
 
   for (const keyword of sensitiveKeywords) {
@@ -57,7 +57,7 @@ module.exports.handleEvent = async ({ event, api }) => {
         const outputStream = fs.createWriteStream(__dirname + "/cache/warned_avt.png");
         canvas.createPNGStream().pipe(outputStream);
         outputStream.on("finish", () => {
-          const warningMessage = `⚠️ 𝗪𝗔𝗥𝗡𝗜𝗡𝗚!\n\nYour message contains sensitive content. Please refrain from using inappropriate language or threatening other users.\n\n  ⦿ 𝗨𝗦𝗘𝗥: ${userName}\n  ⦿ 𝗜𝗗: ${senderID}\n  ⦿ 𝗞𝗘𝗬𝗪𝗢𝗥𝗗: ${keyword}`;
+          const warningMessage = `╭•┄┅═❁🌺❁═┅┄•╮\n⚠️ 𝗪𝗔𝗥𝗡𝗜𝗡𝗚 ⚠️\n╰•┄┅═❁🌺❁═┅┄•╯\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n অনুগ্রহ করে সংবেদনশীল  অনুপযুক্ত অশ্লিল  ভাষা ব্যবহার করবেব না! 🙏 এটা ইসলামিক গ্রুপ তাই এখানে কোন প্রোকার ঝগড়া গালা গালি ও খারাপ কাজ করা থেকে বিরত থাকুন  ।\n\n  ☠️ 𝗨𝗦𝗘𝗥: ${userName}\n  🪪 𝗜𝗗: ${senderID}\n  💬 𝗠𝗦𝗚: ${keyword}`;
           api.sendMessage({ body: warningMessage, attachment: fs.createReadStream(__dirname + "/cache/warned_avt.png") }, event.threadID);
 
           global.data.userBanned.set(senderID, Date.now());
