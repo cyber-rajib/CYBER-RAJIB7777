@@ -33,6 +33,7 @@ module.exports.config = {
     version: "1.0.0",
    Permssion: 0,
     credits: "Islamick Cyber Chat",
+    prefix:true,
     description: "search adio song to play music",
     Category: "play",
     usages: "[searchMusic]",
