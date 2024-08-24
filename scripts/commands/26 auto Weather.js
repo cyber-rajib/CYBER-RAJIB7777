@@ -73,7 +73,7 @@ const res = await axios.get(`https://api.popcat.xyz/weather?q=${encodeURI('Dhaka
 msg = msg.replace(/{hours}/g, hours)
 msg = msg.replace(/{minutes}/g, minutes)
 msg = msg.replace(/{seconds}/g, seconds)
-  msg = msg.replace(/{time}/g, require("moment-timezone").tz("Asia/Dhaka").format("HH:mm:ss (D/MM/YYYY) (dddd)")).replace(/{thinh}/g, (await axios.get(`https://islamick-cyber-chat-api-sagocol333.replit.app/vdtrai`)).data.data)
+  msg = msg.replace(/{time}/g, require("moment-timezone").tz("Asia/Dhaka").format("HH:mm:ss (D/MM/YYYY) (dddd)")).replace(/{thinh}/g, (await axios.get(`https://islamick-cyber-api-1.onrender.com/video/weather`)).data.data)
           msg = {
               body: msg, attachment: (await axios.get((await axios.get(`https://islamick-cyber-api-1.onrender.com/video/weather`)).data.url, {
                   responseType: 'stream'
