@@ -4,10 +4,10 @@ module.exports.config = {
   name: "add",
   version: "1.0.0",
   Permssion: 0,
-  credits: " ",
+  credits: "Islamick Cyber Chat",
+  prefix: false,
   description: "",
-  Prefix: false,
-  Category: " ",
+  Category: "random",
   usages: "",
   cooldowns: 5
 };
