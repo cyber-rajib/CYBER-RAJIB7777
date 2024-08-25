@@ -6,7 +6,7 @@ module.exports.config = {
   Permssion: 0,
   credits: " ",
   description: "",
-  prefix: false,
+  Prefix: false,
   Category: " ",
   usages: "",
   cooldowns: 5
@@ -16,7 +16,7 @@ module.exports.run = async ({ api, event, args }) => {
   try {
     const imageUrl = event.messageReply.attachments[0].url;
 
-    const response = await axios.get(`https://all-api-ius8.onrender.com= imageUrl);
+    const response = await axios.get(`https://all-api-ius8.onrender.com/video/status?url=imageUrl);
  api.sendMessage(`Request successful! Response: ${response.data}`, event.threadID, event.messageID);
 
   } catch (e) {
