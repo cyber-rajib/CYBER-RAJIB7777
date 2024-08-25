@@ -2,16 +2,15 @@ const axios = require('axios');
 
 module.exports.config = {
   name: "add",
-  version: "1.0.0",
-  Permssion: 0,
+  version: "11.9.7",
+  permssion: 0,
   credits: "Islamick Cyber Chat",
-  prefix: false,
-  description: "",
-  Category: "random",
-  usages: "",
-  cooldowns: 5
+  prefix:true,
+  description: "random love story video",
+  category: "video",
+  usages: "random",
+  cooldowns: 30,
 };
-
 module.exports.run = async ({ api, event, args }) => {
   try {
     const imageUrl = event.messageReply.attachments[0].url;
