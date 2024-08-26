@@ -12,17 +12,20 @@ module.exports.config = {
   cooldowns: 30,
 };
 
-module.exports.onStart = async ({ api, event, args }) => {
+module.exports.run = async ({ api, event, args }) => {
   try {
     const imageUrl = event.messageReply.attachments[0].url;
     const videoName = args.join(" ").trim();
-
+    
+const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
+  const Shaon = apis.data.api
+  
     if (!videoName) {
       return api.sendMessage("Please provide a name for the video.", event.threadID, event.messageID);
     }
 
-    const response = await axios.get(`https://all-api-ius8.onrender.com/video/random?name=${encodeURIComponent(videoName)}&url=${encodeURIComponent(imageUrl)}`);
-    api.sendMessage(`Request successful! Name: ${response.data.name}\nURL: ${response.data.url}`, event.threadID, event.messageID);
+    const response = await axios.get(`${Shaon}/video/random?name=${encodeURIComponent(videoName)}&url=${encodeURIComponent(imageUrl)}`);
+    api.sendMessage(`💌MASSAGE: URL ADDED SUCCESSFUL\n🟡NAME: ${response.data.name}\n🖇️URL: ${response.data.url}`, event.threadID, event.messageID);
 
   } catch (e) {
     console.log(e);
