@@ -24,18 +24,18 @@ users.needObject=have to be an Object
 
 # includes/handle/handleCommand.js
 
-handleCommand.userBanned=গ্রুপে ফাইজলামির জন্য একজন এডমিন এই গ্রুপটি ব্যান করছে। ব্যান কে অনব্যান না করা প্রযন্ত গ্রুপে বট  চলবে না বা কাজ করবে না\n অনব্যান করার জন্য  এডমিনকে গ্রুপে এড করেন  বা ইনবক্সে  মেসেজ দেন।\nhttps://m.me/100029115600589
-handleCommand.threadBanned=গ্রুপে ফাজলামোর জন্য একজন এডমিন এই গ্রুপটি ব্যান করছে। ব্যান কে অনব্যান না করা প্রযন্ত গ্রুপে বট  চলবে না বা কাজ করবে না\n অনব্যান করার জন্য  এডমিনকে গ্রুপে এড করেন  বা ইনবক্সে  মেসেজ দেন।\nhttps://m.me/100029115600589.
-handleCommand.commandNotExist=কি কমান্ড দিলে ভাই🙄🙄\nএই কমান্ড তো আমি নিজেও খুজে পেলাম নাহ-!!🙄\nআপনি কি "%1" কমান্ড টি খুজছেন
+handleCommand.userBanned=An admin is banning this group for Faizlami in the group. The bot will not run or work in the group until the ban is unbanned\n To unban, add the admin to the group or send a message to the inbox.\nhttps://m.me/100029115600589
+handleCommand.threadBanned=An admin is banning this group for messing around in the group. The bot will not run or work in the group until the ban is unbanned\n To unban, add the admin to the group or send a message to the inbox.\nhttps://m.me/100029115600589
+handleCommand.commandNotExist=What command bro\nI couldn't find this command myself...!!🙂💔\nAre you looking for "%1" command?
 handleCommand.commandThreadBanned=your thread is unable to use command "%1"
 handleCommand.commandUserBanned=you are unable to use command "%1"
-handleCommand.threadNotAllowNSFW=আপনার NSFW কমান্ড ব্যাবহারের কোন অনুমতি নেই-!!🐸\nঅইনুমতি নিতে আডমিন এর সাথে যোগাযোগ করুন
+handleCommand.threadNotAllowNSFW=You are not allowed to use NSFW command-!!🐸\nContact admin for permission
 handleCommand.cantGetInfoThread=can't get your thread's info, error: %1
-handleCommand.permissionNotEnough=আপনার "%1" কমান্ড ব্যবহারের কোন অনুমতি নেই-!!🐸\n এই কমান্ড শুধু আডমিন ব্যবহার করতে পারবে
+handleCommand.permissionNotEnough=You do not have permission to use the command "%1"\n This command can only be used by admins...!!🐸
 handleCommand.cantSetMessageReaction=having some unexpected error at setMessageReaction, error: %1
 handleCommand.executeCommand=\ntime and date : %1\ncommand used : %2\nuser id : %3\ngroup id : %4\nargs included : %5\nprocessing time : %6ms
 handleCommand.commandError=having some unexpected error when using command %1, error : %2
-handleCommand.notMatched=এই কমান্ড ব্যাবহারে\nকোন prefix এর প্রয়োজন নেই\n কারন এটাকে noprefix করা হয়েছে ভাই-!!🙂💔
+handleCommand.notMatched=Using this command\n no prefix is ​​needed\n because it is noprefixed bro-!!🙂💔
 handleCommand.noPrefix=this command has no command config "usePrefix" property
 handleCommand.commandNotFound=the command you used doesn't exist.
 
