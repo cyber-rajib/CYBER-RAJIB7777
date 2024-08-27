@@ -28,10 +28,10 @@ start: async function({ shaon, events, args, lang }) {
   const res = await axios.get(`${n}/random?name=${np}`)
   console.log(res.data)
   var msg = [];
-  let video = `${res.data.url}`;
-  let name = `${res.data.name}`;
-  let cp = `${res.data.cp}`
-  let ln = `${res.data.count}`
+  let video = `${res.data.data.url}`;
+  let name = `${res.data.data.name}`;
+  let cp = `${res.data.data.cp}`
+  let ln = `${res.data.data.count}`
 
   let videos = (await axios.get(`${video}`, {
         responseType: 'arraybuffer'
