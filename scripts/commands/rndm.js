@@ -25,7 +25,7 @@ start: async function({ shaon, events, args, lang }) {
   if (!args[0]) return shaon.reply(lang("missing"), events.threadID, events.messageID)
   const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
   const n = apis.data.api;
-  const res = await axios.get(`${n}/random?name=${np}`)
+  const res = await axios.get(`${n}/video/random?name=${np}`)
   console.log(res.data)
   var msg = [];
   let video = `${res.data.data.url}`;
