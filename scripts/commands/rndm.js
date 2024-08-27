@@ -22,16 +22,16 @@ start: async function({ shaon, events, args, lang }) {
   const axios = require("axios")
   const fs = require("fs")
   const np = args.join(" ");
-  if (!args[0]) return nayan.reply(lang("missing"), events.threadID, events.messageID)
+  if (!args[0]) return shaon.reply(lang("missing"), events.threadID, events.messageID)
   const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
   const n = apis.data.api;
   const res = await axios.get(`${n}/random?name=${np}`)
   console.log(res.data)
   var msg = [];
-  let video = `${res.data.data.url}`;
-  let name = `${res.data.data.name}`;
-  let cp = `${res.data.data.cp}`
-  let ln = `${res.data.data.count}`
+  let video = `${res.data.url}`;
+  let name = `${res.data.name}`;
+  let cp = `${res.data.cp}`
+  let ln = `${res.data.count}`
 
   let videos = (await axios.get(`${video}`, {
         responseType: 'arraybuffer'
@@ -44,7 +44,7 @@ start: async function({ shaon, events, args, lang }) {
       msg += `${cp}\n\n𝐓𝐨𝐭𝐚𝐥 𝐕𝐢𝐝𝐞𝐨𝐬: [${ln}]\n𝐀𝐝𝐝𝐞𝐝 𝐓𝐡𝐢𝐬 𝐕𝐢𝐝𝐞𝐨 𝐓𝐨 𝐓𝐡𝐞 𝐀𝐩𝐢 𝐁𝐲 [${name}]`
   }
 
-  return nayan.reply({
+  return shaon.reply({
       body: msg,
       attachment: allvideo
   }, events.threadID, events.messageID);
