@@ -6,9 +6,8 @@ const baseApiUrl = async () => {
   );
   return base.data.api;
 };
-module.exports = {
-  config: {
-    name: "song",
+module.exports.config = {
+    name: "sing",
     version: "1.1.5",
     credits: "dipto",
     prefix:true,
@@ -17,8 +16,8 @@ module.exports = {
     description: "Download audio from YouTube",
     category: "media",
     usages: "{pn} [<song name>|<song link>]:"+ "\n   Example:"+"\n{pn} chipi chipi chapa chapa"
-  },
-  run: async ({api,args, event,commandName, message }) =>{
+  }
+  module.exports.run: async ({api,args, event,commandName, message }) =>{
     const checkurl = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))((\w|-){11})(?:\S+)?$/;
     let videoID;
     const urlYtb = checkurl.test(args[0]);
@@ -63,8 +62,8 @@ global.client.handleReply.push({
         result
       });
     },event.messageID);
-  },
-  handleReply: async ({ event, api, handleReply }) => {
+  }
+ module.exports.handleReply: async ({ event, api, handleReply }) => {
     try {
     const { result } = handleReply;
     const choice = parseInt(event.body);
@@ -86,8 +85,7 @@ global.client.handleReply.push({
       console.log(error);
       api.sendMessage("⭕ Sorry, audio size was less than 26MB",event.threadID,event.messageID)
     }   
- }
-};
+ };
 async function dipto(url,pathName) {
   try {
     const response = (await axios.get(url,{
