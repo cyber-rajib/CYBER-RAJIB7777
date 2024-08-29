@@ -31,11 +31,11 @@ async function downloadMusicFromYoutube(link, path) {
 module.exports.config = {
     name: "song",
     version: "1.0.0",
-   Permssion: 0,
+    Permssion: 0,
     credits: "Islamick Cyber Chat",
-    prefix:true,
+    prefix:false,
     description: "search adio song to play music",
-    Category: "play",
+    category: "play",
     usages: "[searchMusic]",
     cooldowns: 0
 };
