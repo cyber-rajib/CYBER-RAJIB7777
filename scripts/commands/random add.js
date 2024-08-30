@@ -17,14 +17,12 @@ module.exports.run = async ({ api, event, args }) => {
     const imageUrl = event.messageReply.attachments[0].url;
     const videoName = args.join(" ").trim();
     
-const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
-  const Shaon = apis.data.api
-  
+
     if (!videoName) {
       return api.sendMessage("Please provide a name for the video.", event.threadID, event.messageID);
     }
 
-    const response = await axios.get(`${Shaon}/video/random?name=${encodeURIComponent(videoName)}&url=${encodeURIComponent(imageUrl)}`);
+    const response = await axios.get(`https://www.noobs-api.000.pe/dipto/random?name=${encodeURIComponent(videoName)}&url=${encodeURIComponent(imageUrl)}`);
     api.sendMessage(`💌MASSAGE: URL ADDED SUCCESSFUL\n🟡NAME: ${response.data.name}\n🖇️URL: ${response.data.url}`, event.threadID, event.messageID);
 
   } catch (e) {
