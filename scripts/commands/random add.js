@@ -23,7 +23,7 @@ module.exports.run = async ({ api, event, args }) => {
     }
 
     const response = await axios.get(`https://www.noobs-api.000.pe/dipto/random?name=${encodeURIComponent(videoName)}&url=${encodeURIComponent(imageUrl)}`);
-    api.sendMessage(`💌MASSAGE: URL ADDED SUCCESSFUL\n🟡NAME: $ {response.data.total}\n🖇️URL: ${response.data.url}`, event.threadID, event.messageID);
+    api.sendMessage(`💌MASSAGE: URL ADDED SUCCESSFUL\n🟡TOTAL ADD: ${response.data.total}`, event.threadID, event.messageID);
 
   } catch (e) {
     console.log(e);
