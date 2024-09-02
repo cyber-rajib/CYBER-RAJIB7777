@@ -52,7 +52,7 @@ const lang = languagesMap[shortLang];
 
 module.exports.config = {
 
-name: "@ত্রিশা মনি",
+name: " trisha",
 
 version: "1.0.0",
 
