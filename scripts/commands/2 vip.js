@@ -25,13 +25,13 @@ module.exports.run = async function ({ event, api , args, Users}){
   page < -1 ? page = 1 : "";
   var limit = 10;
   var numPage = Math.ceil(b / limit);
-  var msg = `╭•┄┅════❁🌺❁════┅┄•╮\n    𝐕𝐈𝐏 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐈𝐂𝐓𝐔𝐑𝐄\n╰•┄┅════❁🌺❁════┅┄•╯\n\n`;
+  var msg = `╭•┄┅══❁🌺❁══┅┄•╮\n    𝐕𝐈𝐏 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐈𝐂𝐓𝐔𝐑𝐄\n╰•┄┅══❁🌺❁══┅┄•╯\n\n`;
   var x = 1;
   for (var i = limit * (page - 1); i < limit * (page - 1) + limit; i++) {
       if (i >= b) break;
       msg += `｢🪄｣ ${i+1} ${name[i]}\n\n`;
   }
-  msg += `｢🌸｣ 𝐏𝐚𝐠𝐞 (${page}/${numPage})\n｢🪄｣𝐔𝐬𝐞 ${global.config.PREFIX}${this.config.name}\n｢👀｣𝐍𝐮𝐦𝐛𝐞𝐫 𝐨𝐟 𝐩𝐚𝐠𝐞𝐬\n\n｢🦋｣ 𝐏𝐥𝐞𝐚𝐬𝐞 ${name1} 𝐑𝐞𝐩𝐥𝐲 𝐭𝐨 𝐭𝐡𝐞 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐚𝐜𝐜𝐨𝐫d𝐢𝐧𝐠 𝐭𝐨 𝐭𝐡𝐞 𝐨𝐫d𝐞𝐫 𝐧𝐮𝐦𝐛𝐞𝐫 𝐭𝐨 𝐬𝐞𝐥𝐞𝐜𝐭 𝐩𝐡𝐨𝐭𝐨𝐬\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢🖤｣ 𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸 𝗰𝗵𝗮𝘁 𝗯𝗼𝘁 ｢🖤｣`;
+  msg += `｢🌸｣ 𝐏𝐚𝐠𝐞 (${page}/${numPage})\n｢🪄｣𝐔𝐬𝐞 ${global.config.PREFIX}${this.config.name}\n｢👀｣𝐍𝐮𝐦𝐛𝐞𝐫 𝐨𝐟 𝐩𝐚𝐠𝐞𝐬\n\n｢🦋｣ 𝐏𝐥𝐞𝐚𝐬𝐞 ${name1} 𝐑𝐞𝐩𝐥𝐲 𝐭𝐨 𝐭𝐡𝐞 𝐦𝐞𝐬𝐬𝐚𝐠𝐞 𝐚𝐜𝐜𝐨𝐫d𝐢𝐧𝐠 𝐭𝐨 𝐭𝐡𝐞 𝐨𝐫d𝐞𝐫 𝐧𝐮𝐦𝐛𝐞𝐫 𝐭𝐨 𝐬𝐞𝐥𝐞𝐜𝐭 𝐩𝐡𝐨𝐭𝐨𝐬\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆\n｢🖤｣ 𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸 𝗰𝗵𝗮𝘁 𝗯𝗼𝘁 ｢🖤｣`;
   return api.sendMessage(msg, event.threadID, (error, info) =>
   {
     global.client.handleReply.push(
@@ -47,178 +47,178 @@ module.exports.handleReply = async function ({ event, api , args, handleReply, U
   const axios = require("axios");
 
            if(event.body == "1"){
-       var url = "https://islamick-cyber-chat-api-sagocol333.replit.app/ai"
+       var url = "https://vip-img-api.onrender.com/ai"
 }
        else if(event.body == "2"){
-       var url = "https://vip-img-api.replit.app/bot"
+       var url = "https://vip-img-api.onrender.com/bot"
 }
        else if(event.body == "3"){
-       var url = "https://vip-img-api.replit.app/cosplay"
+       var url = "https://vip-img-api.onrender.com/cosplay"
 }
         else if(event.body == "4"){
-        var url = "https://vip-img-api.replit.app/gai"
+        var url = "https://vip-img-api.onrender.com/gai"
 }
         else if(event.body == "5"){
-        var url = "https://vip-img-api.replit.app/ig"
+        var url = "https://vip-img-api.onrender.com/ig"
 }
        else if(event.body == "6"){
-        var url = "https://vip-img-api.replit.app/trai"
+        var url = "https://vip-img-api.onrender.com/trai"
 }
        else if(event.body == "7"){
-        var url = "https://vip-img-api.replit.app/tw"
+        var url = "https://vip-img-api.onrender.com/tw"
 }
        else if(event.body == "8"){
-        var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/ai"
+        var url = "https://vip-img-api2.onrender.com/ai"
 }
        else if(event.body == "9"){
-       var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/bot"
+       var url = "https://vip-img-api2.onrender.com/bot"
 }
        else if(event.body == "10"){
-       var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/cosplay"
+       var url = "https://vip-img-api2.onrender.com/cosplay"
 }
        else if(event.body == "11"){
-       var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/gai"
+       var url = "https://vip-img-api2.onrender.com/gai"
 }
       else if(event.body == "12"){
-        var  url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/ig"
+        var  url = "https://vip-img-api2.onrender.com/ig"
 }
        else if(event.body == "13"){
-        var  url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/trai"
+        var  url = "https://vip-img-api2.onrender.com/trai"
 }
        else if(event.body == "14"){
-       var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/tw"
+       var url = "https://vip-img-api2.onrender.comg/tw"
 }
        else if(event.body == "15"){
-       var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/ai"
+       var url = "https://vip-img-api3.onrender.com/ai"
 }
        else if(event.body == "16"){
-        var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/bot"
+        var url = "https://vip-img-api3.onrender.com/bot"
 }
        else if(event.body == "17"){
-         var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/cosplay"
+         var url = "https://vip-img-api3.onrender.com/cosplay"
 }
        else if(event.body == "18"){
-        var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/gai"
+        var url = "https://vip-img-api3.onrender.com/gai"
 }
        else if(event.body == "19"){
-         var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/ig"
+         var url = "https://vip-img-api3.onrender.com/ig"
 }
        else if(event.body == "20"){
-        var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/trai"
+        var url = "https://vip-img-api3.onrender.com/trai"
 }
       else if(event.body == "21"){
-        var url = "https://747370b1-edb9-460c-8d62-8cb667eeebcb-00-y48q91t3o1ky.riker.replit.dev/tw"
+        var url = "https://vip-img-api3.onrender.com/tw"
 }
      else if(event.body == "22"){
-        var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ai"
+        var url = "https://vip-img-api4.onrender.com/ai"
 }
      else if(event.body == "23"){
-        var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/bot"
+        var url = "https://vip-img-api4.onrender.com/bot"
 }
      else if(event.body == "24"){
-        var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/cosplay"
+        var url = "https://vip-img-api4.onrender.com/cosplay"
 }
      else if(event.body == "25"){
-        var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/gai"
+        var url = "https://vip-img-api4.onrender.com/gai"
 }
      else if(event.body == "26"){
-         var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ig"
+         var url = "https://vip-img-api4.onrender.com/ig"
 }
      else if(event.body == "27"){
-       var  url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/trai"
+       var  url = "https://vip-img-api4.onrender.com/trai"
 }
      else if(event.body == "28"){
-         var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/tw "
+         var url = "https://vip-img-api4.onrender.com/tw "
 }
      else if(event.body == "29"){
-         var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ai"
+         var url = "https://vip-img-api5.onrender.com/ai"
 }
      else if(event.body == "30"){
-       var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ai"
+       var url = "https://vip-img-api5.onrender.com/ai"
 }
      else if(event.body == "31"){
-       var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ai"
+       var url = "https://vip-img-api5.onrender.com/ai"
 }
      else if(event.body == "32"){
-        var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ai"
+        var url = "https://vip-img-api5.onrender.com/ai"
 }
      else if(event.body == "33"){
-      var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ai"
+      var url = "https://vip-img-api5.onrender.com/ai"
 }
      else if(event.body == "34"){
-       var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ai"
+       var url = "https://vip-img-api5.onrender.com/ai"
 }
      else if(event.body == "35"){
-       var url = "https://31bd71c1-7216-4f7e-a09d-db518e882eeb-00-2z0h8pvffcb3c.spock.replit.dev/ai"
+       var url = "https://vip-img-api5.onrender.com/ai"
 }
      else if(event.body == "36"){
-       var url = "https://6c2de656-128c-485d-b019-c25d7348f16f-00-1kyrb9d6lan5t.picard.replit.dev/ai"
+       var url = "https://vip-img-api6.onrender.com/ai"
 }
      else if(event.body == "37"){
-      var url = "https://6c2de656-128c-485d-b019-c25d7348f16f-00-1kyrb9d6lan5t.picard.replit.dev/bot"
+      var url = "https://vip-img-api6.onrender.com/bot"
 }
      else if(event.body == "38"){
-      var url = "https://6c2de656-128c-485d-b019-c25d7348f16f-00-1kyrb9d6lan5t.picard.replit.dev/cosplay"
+      var url = "https://vip-img-api6.onrender.com/cosplay"
 }
       else if(event.body == "39"){
-      var url = "https://6c2de656-128c-485d-b019-c25d7348f16f-00-1kyrb9d6lan5t.picard.replit.dev/gai"
+      var url = "https://vip-img-api6.onrender.com/gai"
 }
       else if(event.body == "40"){
-      var url = "https://6c2de656-128c-485d-b019-c25d7348f16f-00-1kyrb9d6lan5t.picard.replit.dev/ig"
+      var url = "https://vip-img-api6.onrender.com/ig"
 }
       else if(event.body == "41"){
-      var url = "https://6c2de656-128c-485d-b019-c25d7348f16f-00-1kyrb9d6lan5t.picard.replit.dev/trai"
+      var url = "https://vip-img-api6.onrender.com/trai"
 }
       else if(event.body == "42"){
-      var url = "https://6c2de656-128c-485d-b019-c25d7348f16f-00-1kyrb9d6lan5t.picard.replit.dev/tw"
+      var url = "https://vip-img-api6.onrender.com/tw"
 }
       else if(event.body == "43"){
-      var url = "https://60a9a3a3-528c-4e1f-8edc-954636a40bc4-00-1znidai0z5tdw.riker.replit.dev/ai"
+      var url = "https://vip-img-api7.onrender.com/ai"
 }
       else if(event.body == "44"){
-      var url = "https://60a9a3a3-528c-4e1f-8edc-954636a40bc4-00-1znidai0z5tdw.riker.replit.dev/bot"
+      var url = "https://vip-img-api7.onrender.com/bot"
 }
       else if(event.body == "45"){
-      var url = "https://60a9a3a3-528c-4e1f-8edc-954636a40bc4-00-1znidai0z5tdw.riker.replit.dev/cosplay"
+      var url = "https://vip-img-api7.onrender.com/cosplay"
 }
       else if(event.body == "46"){
-      var url = "https://60a9a3a3-528c-4e1f-8edc-954636a40bc4-00-1znidai0z5tdw.riker.replit.dev/gai"
+      var url = "https://vip-img-api7.onrender.com/gai"
 }
       else if(event.body == "47"){
-      var url = "https://60a9a3a3-528c-4e1f-8edc-954636a40bc4-00-1znidai0z5tdw.riker.replit.dev/ig"
+      var url = "https://vip-img-api7.onrender.com/ig"
 }
       else if(event.body == "48"){
-      var url = "https://60a9a3a3-528c-4e1f-8edc-954636a40bc4-00-1znidai0z5tdw.riker.replit.dev/trai"
+      var url = "https://vip-img-api7.onrender.com/trai"
 }
       else if(event.body == "49"){
-      var url = "https://60a9a3a3-528c-4e1f-8edc-954636a40bc4-00-1znidai0z5tdw.riker.replit.dev/tw"
+      var url = "https://vip-img-api7.onrender.com/tw"
 }
   else if(event.body == "50"){
-      var url = "https://2d617f9b-7c99-4b44-8707-95aabbdb5940-00-1ilsl05aivxd3.janeway.replit.dev/ai"
+      var url = "https://vip-img-api8.onrender.com/ai"
 }
   else if(event.body == "51"){
-      var url = "https://2d617f9b-7c99-4b44-8707-95aabbdb5940-00-1ilsl05aivxd3.janeway.replit.dev/bot"
+      var url = "https://vip-img-api8.onrender.com/bot"
 }
   else if(event.body == "52"){
-      var url = "https://2d617f9b-7c99-4b44-8707-95aabbdb5940-00-1ilsl05aivxd3.janeway.replit.dev/cosplay"
+      var url = "https://vip-img-api8.onrender.com/cosplay"
 }
   else if(event.body == "53"){
-      var url = "https://2d617f9b-7c99-4b44-8707-95aabbdb5940-00-1ilsl05aivxd3.janeway.replit.dev/gai"
+      var url = "https://vip-img-api8.onrender.com/gai"
 }
   else if(event.body == "54"){
-      var url = "https://2d617f9b-7c99-4b44-8707-95aabbdb5940-00-1ilsl05aivxd3.janeway.replit.dev/ig"
+      var url = "https://vip-img-api8.onrender.com/ig"
 }
   else if(event.body == "55"){
-      var url = "https://2d617f9b-7c99-4b44-8707-95aabbdb5940-00-1ilsl05aivxd3.janeway.replit.dev/trai"
+      var url = "https://vip-img-api8.onrender.com/trai"
 }
   else if(event.body == "56"){
-      var url = "https://2d617f9b-7c99-4b44-8707-95aabbdb5940-00-1ilsl05aivxd3.janeway.replit.dev/tw"
+      var url = "https://vip-img-api8.onrender.com/tw"
 }
   else if(event.body == "57"){
-      var url = "https://4641d68c-964b-4f52-acda-ba83fdb4fc2c-00-215x3lvzcrdq7.riker.replit.dev/trai"
+      var url = "https://vip-img-api8.onrender.com/trai"
 }
   else if(event.body == "58"){
-      var url = "https://4641d68c-964b-4f52-acda-ba83fdb4fc2c-00-215x3lvzcrdq7.riker.replit.dev/trai"
+      var url = "https://vip-img-api9.onrender.com/trai"
 }
   switch(handleReply.type){
   case "choose":{
@@ -230,7 +230,7 @@ module.exports.handleReply = async function ({ event, api , args, handleReply, U
   const download = (await axios.get(data, {
       responseType: "stream"
   })).data;
-  return api.sendMessage({body: `｢🌩️｣       𝐒𝐮𝐜𝐜𝐞𝐬𝐬       ｢🌩️｣\n｢📸｣       𝐏𝐡𝐨𝐭𝐨 𝐛𝐲     ｢📸｣ ${name}𝐓𝐡𝐢𝐬\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, attachment : download}, event.threadID)
+  return api.sendMessage({body: `｢🌩️｣       𝐒𝐮𝐜𝐜𝐞𝐬𝐬       ｢🌩️｣\n｢📸｣       𝐏𝐡𝐨𝐭𝐨 𝐛𝐲     ｢📸｣ ${name}𝐓𝐡𝐢𝐬\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, attachment : download}, event.threadID)
 }
   }
 }
