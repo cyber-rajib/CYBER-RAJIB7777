@@ -25,7 +25,7 @@ module.exports.run = async function ({ event, api , args, Users}){
   page < -1 ? page = 1 : "";
   var limit = 10;
   var numPage = Math.ceil(b / limit);
-  var msg = `╭•┄┅══❁🌺❁══┅┄•╮\n    𝐕𝐈𝐏 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐈𝐂𝐓𝐔𝐑𝐄\n╰•┄┅══❁🌺❁══┅┄•╯\n\n`;
+  var msg = `╭•┄┅══❁🌺❁══┅┄•╮\n    𝐕𝐈𝐏 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐈𝐂𝐓𝐔𝐑𝐄 \n╰•┄┅══❁🌺❁══┅┄•╯\n\n`;
   var x = 1;
   for (var i = limit * (page - 1); i < limit * (page - 1) + limit; i++) {
       if (i >= b) break;
@@ -230,7 +230,7 @@ module.exports.handleReply = async function ({ event, api , args, handleReply, U
   const download = (await axios.get(data, {
       responseType: "stream"
   })).data;
-  return api.sendMessage({body: `｢🌩️｣       𝐒𝐮𝐜𝐜𝐞𝐬𝐬       ｢🌩️｣\n｢📸｣       𝐏𝐡𝐨𝐭𝐨 𝐛𝐲     ｢📸｣ ${name}𝐓𝐡𝐢𝐬\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, attachment : download}, event.threadID)
+  return api.sendMessage({body: `｢🌩️｣       𝐒𝐮𝐜𝐜𝐞𝐬𝐬       ｢🌩️｣\n｢📸｣       𝐏𝐡𝐨𝐭𝐨 𝐛𝐲     ｢📸｣ ${name} \n𝐓𝐡𝐢𝐬: ${name[i]}\n\n⋆✦⋆⎯⎯⎯⎯⎯⎯⎯⎯⎯⋆✦⋆`, attachment : download}, event.threadID)
 }
   }
 }
